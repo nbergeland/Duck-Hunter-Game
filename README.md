@@ -121,3 +121,4 @@ Classic game of Duck Hunter coded in Python. Runs locally.
     if __name__ == '__main__':
         main()
 
+![Screenshot: Duck Hunter](duck.png)
