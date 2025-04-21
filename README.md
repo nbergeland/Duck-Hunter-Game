@@ -28,7 +28,7 @@ Classic game of Duck Hunter coded in Python. Runs locally.
     MALLARD_HEAD = (0, 128, 0)         # Green head
     MALLARD_BILL = (255, 215, 0)       # Yellow bill
     CROSSHAIR_COLOR = (200, 0, 0)
-    
+
     # Game settings
     FPS = 60
     DUCK_WIDTH, DUCK_HEIGHT = 60, 45
@@ -84,21 +84,21 @@ Classic game of Duck Hunter coded in Python. Runs locally.
         score_text = font.render(f"Score: {score}", True, BLACK)
         time_text = font.render(f"Time: {int(time_left)}", True, BLACK)
         screen.blit(score_text, (10, 10))
-        screen.blit(time_text, (WIDTH - 150, 10))
+        screen.blit(time_text, (WIDTH // 2 - time_text.get_width() // 2, 10))
     
     
-    def main():
+    def game_loop():
         clock = pygame.time.Clock()
         font = pygame.font.SysFont('Arial', 32)
         score = 0
         start_ticks = pygame.time.get_ticks()
         ducks = [Duck()]
-        running = True
 
-    while running:
-        dt = clock.tick(FPS)
+    while True:
+        dt = clock.tick(FPS) / 1000
         elapsed = (pygame.time.get_ticks() - start_ticks) / 1000
         time_left = GAME_DURATION - elapsed
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -112,7 +112,7 @@ Classic game of Duck Hunter coded in Python. Runs locally.
                         break
 
         if time_left <= 0:
-            running = False
+            return score
 
         if random.random() < 0.01:
             ducks.append(Duck())
@@ -129,24 +129,36 @@ Classic game of Duck Hunter coded in Python. Runs locally.
         draw_hud(SCREEN, score, time_left, font)
         pygame.display.flip()
 
-    # Game Over screen loop
-    SCREEN.fill(BLACK)
-    over_text = font.render(f"Game Over! Final Score: {score}", True, WHITE)
-    SCREEN.blit(over_text, (WIDTH // 2 - over_text.get_width() // 2, HEIGHT // 2 - 20))
-    pygame.display.flip()
 
-    gameover = True
-    while gameover:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                gameover = False
-        pygame.time.delay(100)
+    def main():
+        font = pygame.font.SysFont('Arial', 32)
+        while True:
+            score = game_loop()
 
-    pygame.quit()
-    sys.exit()
+        # Game Over menu
+        SCREEN.fill(BLACK)
+        over_text = font.render(f"Game Over! Score: {score}", True, WHITE)
+        retry_text = font.render("Press R to Retry or Q to Quit", True, WHITE)
+        SCREEN.blit(over_text, (WIDTH // 2 - over_text.get_width() // 2, HEIGHT // 2 - 40))
+        SCREEN.blit(retry_text, (WIDTH // 2 - retry_text.get_width() // 2, HEIGHT // 2 + 10))
+        pygame.display.flip()
+
+        waiting = True
+        while waiting:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_r:
+                        waiting = False  # restart loop
+                    if event.key == pygame.K_q:
+                        pygame.quit()
+                        sys.exit()
 
 
     if __name__ == '__main__':
         main()
+
 
 ![Screenshot: Duck Hunter](duck.png)
