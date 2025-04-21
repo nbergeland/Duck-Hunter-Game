@@ -1,5 +1,5 @@
-# Duck-Hunter-Game
-Classic game of Duck Hunter coded in Python. Runs locally.
+# 🦆 Duck-Hunter-Game 🦆
+Classic game of Duck Hunter coded in Python. Runs locally. 🦆🦆
 
     # This code is a simple duck hunting game where the player clicks on ducks to score points.
     # The game features a mallard duck design, a crosshair for aiming, and a HUD displaying the score and time left.
