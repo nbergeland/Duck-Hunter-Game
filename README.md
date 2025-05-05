@@ -7,14 +7,15 @@ This document provides a comprehensive introduction to the Duck Hunter game, a s
 
 ## Game Concept
 Duck Hunter is a classic arcade-style hunting game implemented in Python using the Pygame library. Players use their mouse to aim a crosshair at mallard ducks flying across the screen. When a player successfully clicks on a duck, they earn a point and the duck is removed from the game. The game runs for a fixed duration (30 seconds by default), after which the player's final score is displayed.
-
+![Screenshot](gc.png)
 ## Core Components
 The Duck Hunter game consists of several key components that work together to create the gameplay experience:
 
 ## Game Execution Flow
 The following sequence diagram illustrates how the game progresses from initialization to completion:
-
+![Screenshot](gef.png)
 ## Game Mechanics
+
 ### Duck Behavior
 Ducks in the game follow a simple behavior pattern:
 
@@ -24,6 +25,7 @@ Ducks in the game follow a simple behavior pattern:
 4. New ducks are randomly spawned throughout gameplay
 5. When clicked, a duck is removed and the player's score increases
 
+![Screenshot](gm.png)
 Player Interaction
 Players interact with the game primarily through mouse movements and clicks:
 
@@ -56,7 +58,7 @@ README.md
 
 ### Data Flow
 The following diagram illustrates how data flows through the Duck Hunter game system:
-
+![Screenshot](df.png)
 
 ### Visual Elements
 The game features several key visual elements:
@@ -68,6 +70,7 @@ The game features several key visual elements:
 
 ### Running the Game
 To play Duck Hunter, you need Python installed with the Pygame library. The game runs at 60 frames per second and has a default duration of 30 seconds. 
+Copy & run the notebook below to play
 
 
 
