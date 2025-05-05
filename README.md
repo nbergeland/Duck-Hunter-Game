@@ -70,6 +70,7 @@ The game features several key visual elements:
 
 ### Running the Game
 To play Duck Hunter, you need Python installed with the Pygame library. The game runs at 60 frames per second and has a default duration of 30 seconds. 
+
 Copy & run the notebook below to play
 
 
