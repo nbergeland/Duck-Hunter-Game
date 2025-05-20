@@ -1,5 +1,5 @@
-# # $${\color{dark green}Transportation-Network-Overlap-Detector}$$	
-🦆 Duck-Hunter-Game 🦆
+# # $${\color{green}🦆 Duck-Hunter-Game 🦆}$$	
+
 Classic game of Duck Hunter coded in Python. Runs locally. 🦆🦆
 
 # Overview
