@@ -1,5 +1,4 @@
 # $${\color{green}🦆 Duck-Hunter-Game 🦆}$$	
-
 ![giphy](https://github.com/user-attachments/assets/32ff2ccf-d6d1-4fb0-b58f-79f674e120fc)
 
 Classic game of Duck Hunter coded in Python. Runs locally. 
