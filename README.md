@@ -3,7 +3,7 @@
 
 #### A classic game of Duck Hunter coded in Python. The game runs locally. 
 
-# $${\color{green}🦆 Overview 🦆}$$
+# 🦆 Overview 🦆
 ## Purpose and Scope
 This document provides a comprehensive introduction to the Duck Hunter game, a simple hunting simulation where players aim and shoot at ducks to earn points within a time limit. This overview explains the game concept, its core components, gameplay mechanics, and the high-level structure of the codebase. This code is a simple duck hunting game where the player clicks on ducks to score points. The game features a mallard duck design, a crosshair for aiming, and a HUD displaying the score and time left. The game ends after a set duration, and the final score is displayed. The game is implemented using Pygame, a popular library for creating games in Python. The code includes classes and functions for managing the game state, drawing graphics, and handling user input.
 
